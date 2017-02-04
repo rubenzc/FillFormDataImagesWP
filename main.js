@@ -1,21 +1,8 @@
-/* 010217 */
-var alt = document.createElement("Input");
-alt.setAttribute("type","text");
-alt.setAttribute("value","Alt");
-document.body.appendChild(alt);
+var myForm = $("<form id='shellForm'><div id='divForm'><div/></form>");
 
-var title = document.createElement("Input");
-title.setAttribute("type","text");
-title.setAttribute("value","Title");
-document.body.appendChild(title);
+myForm.append('<input type="text" id="inputAlt" value="" placeholder="Insert Alt">');
+myForm.append('<input type="text" id="inputTitle" value="" placeholder="Insert Title">');
+myForm.append('<input type="text" id="inputCat" value="" placeholder="Insert Cetegorie">');
+myForm.append('<input type="button" id="buttonForm" value="SUBMIT">');
 
-var etiqueta = document.createElement("Input");
-etiqueta.setAttribute("type","text");
-etiqueta.setAttribute("value","Etiqueta");
-document.body.appendChild(etiqueta);
-
-
-var button = document.createElement("BUTTON");
-var buttonText = document.createTextNode("ACEPTAR");
-button.appendChild(buttonText);
-document.body.appendChild(button);
+$('body').append(myForm);
