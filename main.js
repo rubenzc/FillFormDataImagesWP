@@ -2,10 +2,10 @@
 var shellForm = $("<form id='shellForm'></form>");
 var divForm = $("<div id='divForm'></div>")
 
-divForm.append('<label for=inputAlt><input type="text" value="" id="inputAlt" placeholder="Insert Alt"></label>');
-divForm.append('<label for=inputTitle><input type="text" id="inputTitle" value="" placeholder="Insert Title"></label>');
-divForm.append('<label for=inputCat><input type="text" id="inputCat" value="" placeholder="Insert Cetegorie"></label>');
-divForm.append('<label for=buttonForm><input type="button" id="buttonForm" value="SUBMIT"></label>');
+divForm.append('<label class="control-label" for="inputAlt">Alt<input type="text" value="" id="inputAlt" placeholder="Insert Alt"></label>');
+divForm.append('<label class="control-label" for="inputTitle">Title<input type="text" id="inputTitle" value="" placeholder="Insert Title"></label>');
+divForm.append('<label class="control-label" for="inputCat">Categorie<input type="text" id="inputCat" value="" placeholder="Insert Cetegorie"></label>');
+divForm.append('<label class="control-label" for="buttonForm"><input type="button" id="buttonForm" value="SUBMIT"></label>');
 
 $(shellForm).append(divForm);
 $('body').append(shellForm);
@@ -23,13 +23,12 @@ $("#shellForm").css({
 });
 
 $("#divForm").css({
-    'margin': '5% auto 0',
-    'text-align': 'center',
+    'margin': '15% auto 0',
     'width': '200px'
 });
 
 $("#inputAlt").css({
-    'border': '0 !important',
+    'border-width': '0 !important',
     'color': '#000000',
     'height': '30px',
     'margin-bottom': '5px',
@@ -37,7 +36,7 @@ $("#inputAlt").css({
 });
 
 $("#inputTitle").css({
-    'border': '0 !important',
+    'border-width': '0 !important',
     'color': '#000000',
     'height': '30px',
     'margin-bottom': '5px',
@@ -45,7 +44,7 @@ $("#inputTitle").css({
 });
 
 $("#inputCat").css ({
-    'border': '0 !important',
+    'border-width': '0 !important',
     'color': '#000000',
     'height': '30px',
     'margin-bottom': '5px',
@@ -53,13 +52,20 @@ $("#inputCat").css ({
 });
 
 $("#buttonForm").css ({
-    'border': '0 !important',
+    'border': '1px solid !important',
+    'border-radius': '30px',
     'background': '#00cc66',
     'color': '#fff',
     'display': 'block',
     'font-size': '12px',
-    'height': '30px',
+    'height': '35px',
     'text-align': 'center',
     'text-transform': 'uppercase',
     'width': '204px'
+});
+
+$(".control-label").css ({
+    'display': 'inline-block',
+    'margin-bottom': '5px',
+    'font-weight': '700'
 });
