@@ -9,14 +9,15 @@ $('#buttonForm').addClass('btn-success');
 */
 
 
+var myForm = $("<form id='shellForm'></form>");
+var divForm = $("<div id='divForm'></div>")
 
-var myForm = $("<form id='shellForm'><div id='divForm'><div/></form>");
+divForm.append('<label for=inputAlt><input type="text" value="" id="inputAlt" placeholder="Insert Alt"></label>');
+divForm.append('<label for=inputTitle><input type="text" id="inputTitle" value="" placeholder="Insert Title"></label>');
+divForm.append('<label for=inputCat><input type="text" id="inputCat" value="" placeholder="Insert Cetegorie"></label>');
+divForm.append('<label for=buttonForm><input type="button" id="buttonForm" value="SUBMIT"></label>');
 
-myForm.append('<input type="text" id="inputAlt" value="" placeholder="Insert Alt">');
-myForm.append('<input type="text" id="inputTitle" value="" placeholder="Insert Title">');
-myForm.append('<input type="text" id="inputCat" value="" placeholder="Insert Cetegorie">');
-myForm.append('<input type="button" id="buttonForm" value="SUBMIT">');
-
+$(myForm).append(divForm);
 $('body').append(myForm);
 
 /*Styles*/
