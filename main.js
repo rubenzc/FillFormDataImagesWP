@@ -1,10 +1,11 @@
+//////////////////*FUNCTIONS*///////////////
 $().ready(function(){
     $("input[id=buttonForm]").click(function(){
-        alert('Evento click');
+        alert('Evento click capturado!!');
     });
 });
 
-
+//////////////////*FORM*////////////////////
 
 var shellForm = $("<form id='shellForm'></form>");
 var divForm = $("<div id='divForm'></div>")
@@ -17,7 +18,7 @@ divForm.append('<label class="control-label" for="buttonForm"><input type="butto
 $(shellForm).append(divForm);
 $('body').append(shellForm);
 
-/*Styles*/
+//////////////////*STYLES*//////////////////
 
 $("#shellForm").css({
     'background': 'rgba(96, 125, 139, 0.5)',
