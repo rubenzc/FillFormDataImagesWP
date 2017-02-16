@@ -1,3 +1,10 @@
+$().ready(function(){
+    $("input[id=buttonForm]").click(function(){
+        alert('Evento click');
+    });
+});
+
+
 
 var shellForm = $("<form id='shellForm'></form>");
 var divForm = $("<div id='divForm'></div>")
