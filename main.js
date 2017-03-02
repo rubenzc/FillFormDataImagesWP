@@ -1,20 +1,20 @@
 //////////////////*FUNCTIONS*///////////////
 $().ready(function(){
-    $("input[id=buttonForm]").click(function(){
+    $("form").submit(function(){
         alert('Evento click capturado!!');
     });
 });
 
 //////////////////*FORM*////////////////////
 
-var shellForm = $("<form id='shellForm'></form>");
-var divForm = $("<div id='divForm'></div>")
+var shellForm = $("<form id='shellForm' action=''></form>");
+var divForm = $("<div id='divForm'></div>");
 
 divForm.append('<label class="control-legend" for="legendTitle">FORM FIELDS<legend value="" id="legendTitle"></label>');
 divForm.append('<label class="control-label" for="inputAlt">Alt<input type="text" value="" id="inputAlt" placeholder=" Insert Alt"></label>');
 divForm.append('<label class="control-label" for="inputTitle">Title<input type="text" id="inputTitle" value="" placeholder=" Insert Title"></label>');
 divForm.append('<label class="control-label" for="inputCat">Categorie<input type="text" id="inputCat" value="" placeholder=" Insert Cetegorie"></label>');
-divForm.append('<label class="control-label" for="buttonForm"><input type="button" id="buttonForm" value="SUBMIT"></label>');
+divForm.append('<label class="control-label" for="buttonForm"><input type="submit" id="buttonForm" value="SUBMIT"></label>');
 
 $(shellForm).append(divForm);
 $('body').append(shellForm);
