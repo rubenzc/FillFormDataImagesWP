@@ -3,7 +3,7 @@
 var shellForm = jQuery("<form id='shellForm' action=''></form>");
 var divForm = jQuery("<div id='divForm'></div>");
 
-divForm.append('<label class="control-close" for="closeButton">X<span value="" id="closeButton"></label>')
+divForm.append('<label class="control-close" for="closeButton">X<div value="" id="closeButton"></label>')
 divForm.append('<label class="control-legend" for="legendTitle">FORM FIELDS<legend value="" id="legendTitle"></label>');
 divForm.append('<label class="control-label" for="inputAlt">Alt<input type="text" value="" id="inputAlt" placeholder=" Insert Alt"></label>');
 divForm.append('<label class="control-label" for="inputTitle">Title<input type="text" id="inputTitle" value="" placeholder=" Insert Title"></label>');
@@ -101,7 +101,13 @@ jQuery(".control-legend").css ({
     'color': '#fff',
     'display': 'inline-block',
     'margin-bottom': '20px',
-    'font-weight': '700',
+    'font-weight': '700'
+});
+
+jQuery(".control-close").css ({
+    'color': '#fff',
+    'float': 'right',
+    'padding-bottom': '30px'
 });
 
 //////////////////*FUNCTIONS*///////////////
@@ -109,24 +115,27 @@ jQuery(".control-legend").css ({
 
 jQuery().ready(function(){
     
+    //Submit & validation first field
     jQuery("form").submit(function(){
 
         var inputAlt = jQuery('#inputAlt').val();
         var inputTitle = jQuery('#inputTitle').val();
         var inputCat = jQuery('#inputCat').val();
-        /*var formOk = false;*/
+        var close = false;
 
         //Validate inputAlt field
         if (inputAlt == ""){
-
             alert("El campo Alt debe tener un descripción");
             return false;
-
         }else{
-
             jQuery('#the-list .column input').val(inputAlt) && jQuery('#the-list .column textarea').val(inputTitle) && jQuery('#the-list .column-6 textarea').val(inputCat);
             return false;
         }
 
+    });
+
+    //Close Form
+    jQuery(".control-close").click(function(){
+        jQuery("#shellForm").remove();
     });
 });
