@@ -8,7 +8,7 @@ divForm.append('<label class="control-legend" for="legendTitle">FORM FIELDS<lege
 divForm.append('<label class="control-label" for="inputAlt">Alt<input type="text" value="" id="inputAlt" placeholder=" Insert Alt"></label>');
 divForm.append('<label class="control-label" for="inputTitle">Title<input type="text" id="inputTitle" value="" placeholder=" Insert Title"></label>');
 divForm.append('<label class="control-label" for="inputCat">Categorie<input type="text" id="inputCat" value="" placeholder=" Insert Cetegorie"></label>');
-divForm.append('<label class="control-label" for="buttonForm"><input type="submit" id="buttonForm" value="SUBMIT"></label>');
+divForm.append('<label class="control-label" for="buttonForm"><button id="buttonForm" type="button">Click me</button>');
 
 jQuery(shellForm).append(divForm);
 jQuery('body').append(shellForm);
@@ -116,7 +116,7 @@ jQuery(".control-close").css ({
 jQuery().ready(function(){
     
     //Submit & validation first field
-    jQuery("form").submit(function(){
+    jQuery("#buttonForm").on('click', function(){
 
         var inputAlt = jQuery('#inputAlt').val();
         var inputTitle = jQuery('#inputTitle').val();
@@ -126,10 +126,10 @@ jQuery().ready(function(){
         //Validate inputAlt field
         if (inputAlt == ""){
             alert("El campo Alt debe tener un descripción");
-            return false;
+           
         }else{
             jQuery('#the-list .column input').val(inputAlt) && jQuery('#the-list .column textarea').val(inputTitle) && jQuery('#the-list .column-6 textarea').val(inputCat);
-            return false;
+           
         }
 
     });
