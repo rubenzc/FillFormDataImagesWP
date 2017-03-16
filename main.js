@@ -138,4 +138,13 @@ jQuery().ready(function(){
     jQuery(".control-close").click(function(){
         jQuery("#shellForm").remove();
     });
+
+    jQuery("#shellForm").click(function(){
+        jQuery("#shellForm").remove();
+    });
+
+    jQuery("#divForm").click(function(){
+        return false;
+    });
+
 });
