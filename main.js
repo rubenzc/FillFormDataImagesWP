@@ -3,12 +3,12 @@
 var shellForm = jQuery("<form id='shellForm' action=''></form>");
 var divForm = jQuery("<div id='divForm'></div>");
 
-divForm.append('<label class="control-close" for="closeButton">X<div value="" id="closeButton"></label>')
-divForm.append('<label class="control-legend" for="legendTitle">FORM FIELDS<legend value="" id="legendTitle"></label>');
-divForm.append('<label class="control-label" for="inputAlt">Alt<input type="text" value="" id="inputAlt" placeholder=" Insert Alt"></label>');
-divForm.append('<label class="control-label" for="inputTitle">Title<input type="text" id="inputTitle" value="" placeholder=" Insert Title"></label>');
-divForm.append('<label class="control-label" for="inputCat">Categorie<input type="text" id="inputCat" value="" placeholder=" Insert Cetegorie"></label>');
-divForm.append('<label class="control-label" for="buttonForm"><button id="buttonForm" type="button">Click me</button>');
+divForm.append('<label class="control-close" for="closeButton">X<div value="" id="closeButton"></label>');
+divForm.append('<label class="control-legend" for="legendTitle">MODIFICA LOS CAMPOS<legend value="" id="legendTitle"></label>');
+divForm.append('<label class="control-label" for="inputAlt">Alt/Descripción<input type="text" value="" id="inputAlt" placeholder="Modificar Alt"></label>');
+divForm.append('<label class="control-label" for="inputTitle">Título<input type="text" id="inputTitle" value="" placeholder="Modificar Título"></label>');
+divForm.append('<label class="control-label" for="inputCat">Categoría<input type="text" id="inputCat" value="" placeholder="Modificar Categoría"></label>');
+divForm.append('<label class="control-button" for="buttonForm"><button id="buttonForm" type="button">MODIFICAR</button>');
 
 jQuery(shellForm).append(divForm);
 jQuery('body').append(shellForm);
@@ -26,14 +26,14 @@ jQuery("#shellForm").css({
 });
 
 jQuery("#divForm").css({
-    'border': '2px solid #00a3ec',
+    'background': '#fff',
     'padding': '3%',
     'margin': '15% auto 0',
     'width': '200px'
 });
 
 jQuery("#legendTitle .control-label").css({
-    'color': '#fff',
+    'color': '#242b37',
     'font-size': '16px',
     'font-weight': 'bold',
     'margin-bottom': '20px',
@@ -43,7 +43,7 @@ jQuery("#legendTitle .control-label").css({
 
 jQuery(".control-title").css ({
     'color': '#fff',
-    'font-size': '16px',
+    'font-size': '15px',
     'font-weight': 'bold',
     'margin-bottom': '20px',
     'text-align': 'center',  
@@ -51,7 +51,7 @@ jQuery(".control-title").css ({
 });
 
 jQuery("#inputAlt").css({
-    'border': '2px solid #00a3ec',
+    'border': '1px solid #ddd',
     'border-width': '0 !important',
     'color': '#000000',
     'height': '30px',
@@ -60,7 +60,7 @@ jQuery("#inputAlt").css({
 });
 
 jQuery("#inputTitle").css({
-    'border': '2px solid #00a3ec',
+    'border': '1px solid #ddd',
     'border-width': '0 !important',
     'color': '#000000',
     'height': '30px',
@@ -69,7 +69,7 @@ jQuery("#inputTitle").css({
 });
 
 jQuery("#inputCat").css ({
-    'border': '2px solid #00a3ec',
+    'border': '1px solid #ddd',
     'border-width': '0 !important',
     'color': '#000000',
     'height': '30px',
@@ -79,33 +79,41 @@ jQuery("#inputCat").css ({
 
 jQuery("#buttonForm").css ({
     'border': '0',
-    'background': '#00a3ec',
+    'background': '#f6b401',
     'color': '#fff',
     'display': 'block',
-    'font-size': '14px',
+    'font-size': '15px',
     'font-weight': 'bold',
     'height': '35px',
     'text-align': 'center',
     'text-transform': 'uppercase',
-    'width': '204px'
+    'width': '200px'
 });
 
 jQuery(".control-label").css ({
     'display': 'inline-block',
     'margin-bottom': '5px',
     'font-weight': '700',
-    'color': '#fff'
+    'color': '#242b37'
+});
+
+jQuery(".control-button").css ({
+    'display': 'inline-block',
+    'margin-bottom': '5px',
+    'font-weight': '700',
+    'color': '#242b37',
+    'padding-top': '20px'
 });
 
 jQuery(".control-legend").css ({
-    'color': '#fff',
+    'color': '#242b37',
     'display': 'inline-block',
     'margin-bottom': '20px',
     'font-weight': '700'
 });
 
 jQuery(".control-close").css ({
-    'color': '#fff',
+    'color': '#242b37',
     'float': 'right',
     'padding-bottom': '30px'
 });
@@ -123,23 +131,21 @@ jQuery().ready(function(){
         var inputCat = jQuery('#inputCat').val();
         var close = false;
 
-        //Validate inputAlt field
+        jQuery('#the-list .column input').val(inputAlt) && jQuery('#the-list .column textarea').val(inputTitle) && jQuery('#the-list .column-6 textarea').val(inputCat);
+        jQuery("#shellForm").remove();
+
+/*       //Validate inputAlt field
         if (inputAlt == ""){
             alert("El campo Alt debe tener un descripción");
            
         }else{
             jQuery('#the-list .column input').val(inputAlt) && jQuery('#the-list .column textarea').val(inputTitle) && jQuery('#the-list .column-6 textarea').val(inputCat);
            
-        }
+        }*/
 
     });
 
-    //Close Form
-    jQuery(".control-close").click(function(){
-        jQuery("#shellForm").remove();
-    });
-
-    jQuery("#shellForm").click(function(){
+    jQuery(".control-close, #shellForm").click(function(){
         jQuery("#shellForm").remove();
     });
 
