@@ -6,8 +6,11 @@ var divForm = jQuery("<div id='divForm'></div>");
 divForm.append('<label class="control-close" for="closeButton">X<div value="" id="closeButton"></label>');
 divForm.append('<label class="control-legend" for="legendTitle">MODIFICA LOS CAMPOS<legend value="" id="legendTitle"></label>');
 divForm.append('<label class="control-label" for="inputAlt">Alt/Descripción<input type="text" value="" id="inputAlt" placeholder="Modificar Alt"></label>');
+divForm.append('<label class="control-check" for="checkAlt">Borrar Alt<input type="checkbox" id="checkAlt" checked="checked" value="checkAlt"></label>');
 divForm.append('<label class="control-label" for="inputTitle">Título<input type="text" id="inputTitle" value="" placeholder="Modificar Título"></label>');
+divForm.append('<label class="control-check" for="checkTitle">Borrar Title<input type="checkbox" id="checkTitle" value="checkTitle"></label>');
 divForm.append('<label class="control-label" for="inputCat">Categoría<input type="text" id="inputCat" value="" placeholder="Modificar Categoría"></label>');
+divForm.append('<label class="control-check" for="checkCategorie">Borrar Categorie<input type="checkbox" id="checkCategorie" value="checkCategorie"></label>');
 divForm.append('<label class="control-button" for="buttonForm"><button id="buttonForm" type="button">MODIFICAR</button>');
 
 jQuery(shellForm).append(divForm);
@@ -141,7 +144,25 @@ jQuery().ready(function(){
             jQuery('#the-list .column-6 textarea').val(inputCat);
         }
 
-        //Check checkbox
+        //Check checkbox 
+        var chAlt = jQuery('#checkAlt');
+        var ckTitle = jQuery('#checkTitle');
+        var ckCategorie = jQuery('#checkCategorie');
+
+        if(chAlt.is(':checked')){
+            jQuery('#the-list .column input').val("");
+            alert("Borrado alt");
+        }
+        if(ckTitle.is(':checked')){
+            jQuery('#the-list .column-5 textarea').val("");
+            alert("Borrado title");
+        }
+        if(ckCategorie.is(':checked')){
+            jQuery('#the-list .column-6 textarea').val("");
+            alert("Borrado categorie");
+        }
+
+
 
         jQuery("#shellForm").remove(); 
 
