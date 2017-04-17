@@ -123,7 +123,6 @@ jQuery(".control-close").css ({
 
 jQuery().ready(function(){
     
-    //Submit & validation first field
     jQuery("#buttonForm").on('click', function(){
 
         var inputAlt = jQuery('#inputAlt').val();
@@ -131,8 +130,20 @@ jQuery().ready(function(){
         var inputCat = jQuery('#inputCat').val();
         var close = false;
 
-        jQuery('#the-list .column input').val(inputAlt) && jQuery('#the-list .column textarea').val(inputTitle) && jQuery('#the-list .column-6 textarea').val(inputCat);
-        jQuery("#shellForm").remove();
+        //Check empty fields
+        if( inputAlt != ""){
+            jQuery('#the-list .column input').val(inputAlt);
+        }
+        if( inputTitle != ""){
+            jQuery('#the-list .column-5 textarea').val(inputTitle)
+        }
+        if( inputCat != ""){
+            jQuery('#the-list .column-6 textarea').val(inputCat);
+        }
+
+        //Check checkbox
+
+        jQuery("#shellForm").remove(); 
 
 /*       //Validate inputAlt field
         if (inputAlt == ""){
