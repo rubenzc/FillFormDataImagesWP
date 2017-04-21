@@ -1,23 +1,24 @@
 //////////////////*FORM*////////////////////
 
-var shellForm = jQuery("<form id='shellForm' action=''></form>");
-var divForm = jQuery("<div id='divForm'></div>");
+var shellForm = jQuery("<div id='shellForm'></div>");
+var masterForm = jQuery("<form id='masterForm' action=''></form>");
 
-divForm.append('<label class="control-close" for="closeButton">X<div value="" id="closeButton"></label>');
-divForm.append('<label class="control-legend" for="legendTitle">MODIFICA LOS CAMPOS<legend value="" id="legendTitle"></label>');
+masterForm.append('<label class="control-close" for="closeButton">X<div value="" id="closeButton"></label>');
+masterForm.append('<label class="control-legend" for="legendTitle">MODIFICA LOS CAMPOS<legend value="" id="legendTitle"></label>');
 
-divForm.append('<label class="control-label" for="inputAlt">Alt/Descripción<input type="text" value="" id="inputAlt" placeholder="Modificar Alt"></label>');
-divForm.append('<label class="control-check" for="checkAlt"><input type="checkbox" id="checkAlt" checked="checked" value="checkAlt">Vaciar Alt</label>');
+masterForm.append('<label class="control-label" for="inputAlt">Alt/Descripción<input type="text" value="" id="inputAlt" placeholder="Modificar Alt"></label>');
+masterForm.append('<label class="control-check" for="checkAlt"><input type="checkbox" id="checkAlt" checked="checked" value="checkAlt">Vaciar Alt</label>');
 
-divForm.append('<label class="control-label" for="inputTitle">Título<input type="text" id="inputTitle" value="" placeholder="Modificar Título"></label>');
-divForm.append('<label class="control-check" for="checkTitle"><input type="checkbox" id="checkTitle" value="checkTitle">Vaciar Title</label>');
+masterForm.append('<label class="control-label" for="inputTitle">Título<input type="text" id="inputTitle" value="" placeholder="Modificar Título"></label>');
+masterForm.append('<label class="control-check" for="checkTitle"><input type="checkbox" id="checkTitle" value="checkTitle">Vaciar Title</label>');
 
-divForm.append('<label class="control-label" for="inputCat">Categoría<input type="text" id="inputCat" value="" placeholder="Modificar Categoría"></label>');
-divForm.append('<label class="control-check" for="checkCategorie"><input type="checkbox" id="checkCategorie" value="checkCategorie">Vaciar Categoría</label>');
-divForm.append('<label class="control-button" for="buttonForm"><button id="buttonForm" type="button">MODIFICAR</button>');
+masterForm.append('<label class="control-label" for="inputCat">Categoría<input type="text" id="inputCat" value="" placeholder="Modificar Categoría"></label>');
+masterForm.append('<label class="control-check" for="checkCategorie"><input type="checkbox" id="checkCategorie" value="checkCategorie">Vaciar Categoría</label>');
+masterForm.append('<label class="control-button" for="buttonForm"><button id="buttonForm" type="button">MODIFICAR</button>');
 
-jQuery(shellForm).append(divForm);
+
 jQuery('body').append(shellForm);
+jQuery('body').append(masterForm);
 
 //////////////////*STYLES*//////////////////
 
@@ -31,11 +32,17 @@ jQuery("#shellForm").css({
 
 });
 
-jQuery("#divForm").css({
+jQuery("#masterForm").css({
     'background': '#fff',
     'padding': '3%',
     'margin': '15% auto 0',
-    'width': '200px'
+    'height': '350px',
+    'width': '200px',
+    'position': 'fixed',
+    'top': '0',
+    'bottom': '0',
+    'left': '0',
+    'right': '0'
 });
 
 jQuery("#legendTitle .control-label").css({
@@ -171,8 +178,8 @@ jQuery().ready(function(){
         }
 
 
-
         jQuery("#shellForm").remove(); 
+        jQuery("#masterForm").remove(); 
 
 /*       //Validate inputAlt field
         if (inputAlt == ""){
@@ -187,6 +194,7 @@ jQuery().ready(function(){
 
     jQuery(".control-close").click(function(){
         jQuery("#shellForm").remove();
+        jQuery("#masterForm").remove();
     });
 
     
