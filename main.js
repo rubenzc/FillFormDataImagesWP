@@ -145,7 +145,7 @@ jQuery().ready(function(){
 
         //Check empty fields
         if( inputAlt != ""){
-            jQuery('#the-list .column input').val(inputAlt);
+            jQuery('#the-list .column input[type="text"]').val(inputAlt);
         }
         if( inputTitle != ""){
             jQuery('#the-list .column-5 textarea').val(inputTitle)
@@ -161,11 +161,11 @@ jQuery().ready(function(){
         var message = "";
 
         if(chAlt.is(':checked')){
-            jQuery('#the-list .column input').val("");
+            jQuery('#the-list .column input[type="text"]').val("");
             message += " Alt ";
         }
         if(ckTitle.is(':checked')){
-            jQuery('#the-list .column-5 textarea').val("");
+           jQuery('#the-list .column-5 textarea').val("");
             message += " Title ";
         }
         if(ckCategorie.is(':checked')){
